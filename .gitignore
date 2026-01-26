@@ -1,0 +1,14 @@
+# Backups e arquivos de desenvolvimento
+_backups/
+_dev/
+_docs/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
