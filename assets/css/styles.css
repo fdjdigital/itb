@@ -39,12 +39,11 @@
 
   /* Tipografia */
   --font-family: 'Poppins', sans-serif;
-  --font-weight-light: 300;
   --font-weight-regular: 400;
-  --font-weight-medium: 500;
+  --font-weight-medium: 600;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
+  --font-weight-extrabold: 700;
 
   /* Tamanhos de Fonte */
   --font-size-xs: 0.75rem;     /* 12px */
