@@ -707,14 +707,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 **Estrutura da Pasta ITB:**
 ```
 ITB/
-├── 01 - Relatórios e Documentos/
-├── 02 - Sites e Páginas Web/
-├── 03 - Marketing Digital/
-├── 04 - E-mails Marketing/
-├── 05 - Eventos e Apresentações/
-├── 06 - Banco de Imagens e Vídeos/
-├── 07 - Blog e Conteúdo/
-├── 08 - Arquivos Organizados/
+├── 01 - Relatórios e Documentos/   (CSVs, relatórios, análises)
+├── 02 - Site/                       (todo o site: HTMLs, assets, images, blog, turmas, etc.)
+├── 06 - Banco de Imagens e Vídeos/  (fotos e vídeos institucionais)
+├── 08 - Arquivos Organizados/       (projetos técnicos e reuniões)
 └── CLAUDE.md (este arquivo)
 ```
 
