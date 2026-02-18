@@ -470,13 +470,35 @@ document.querySelectorAll('[data-gtm-event]').forEach(element => {
 });
 
 // ============================================================================
+// YOUTUBE VIDEO FACADE (LAZY LOADING)
+// ============================================================================
+
+document.addEventListener('click', function(e) {
+  const facade = e.target.closest('.video-facade');
+  if (!facade) return;
+
+  const videoId = facade.dataset.videoId;
+  if (!videoId) return;
+
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0';
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
+
+  facade.innerHTML = '';
+  facade.style.position = 'relative';
+  facade.appendChild(iframe);
+});
+
+// ============================================================================
 // CONSOLE MESSAGE
 // ============================================================================
 
 console.log(`
 %c 🎓 Instituto Tarcísio Bisinotto %c
 %c Educação Infantil Bilíngue no Belvedere %c
-%c 30 anos de tradição e experiência %c
+%c 28 anos de tradição e experiência %c
 `,
 'background: #004aad; color: white; font-size: 16px; padding: 10px;',
 '',

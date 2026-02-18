@@ -1,6 +1,33 @@
 # ITB - Instituto Tarcísio Bisinotto
 # .htaccess - Configurações do servidor Apache
-# Site hospedado em: vanttmkt.com.br/itb/
+# Hospedagem: Hostinger
+
+# ===================================================================
+# HTTPS E WWW
+# ===================================================================
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^bisinotto\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://www.bisinotto.com.br/$1 [L,R=301]
+
+# ===================================================================
+# REDIRECTS 301 - WORDPRESS
+# ===================================================================
+
+# Taxonomias
+RedirectMatch 301 ^/category/(.*)$ /blog/
+RedirectMatch 301 ^/tag/(.*)$ /blog/
+
+# URLs WordPress
+Redirect 301 /wp-sitemap.xml /sitemap.xml
+RedirectMatch 301 ^/wp-sitemap(.*)$ /sitemap.xml
+RedirectMatch 301 ^/wp-admin(.*)$ /
+RedirectMatch 301 ^/wp-login(.*)$ /
+RedirectMatch 301 ^/wp-includes(.*)$ /
+Redirect 301 /feed/ /blog/
+Redirect 301 /xmlrpc.php /
 
 # ===================================================================
 # SEGURANÇA

@@ -27,6 +27,7 @@
   --color-tertiary: #ff914d;
 
   /* Cores de Apoio */
+  --color-text: #1a1a1a;
   --color-white: #ffffff;
   --color-gray-light: #f1f5f9;
   --color-gray-medium: #6b7280;
@@ -954,6 +955,109 @@ strong, b {
 }
 
 /* Skip to main content */
+/* ========================================================================
+   SVG ICONS
+   ======================================================================== */
+
+.card__icon svg {
+  width: 48px;
+  height: 48px;
+  color: var(--color-primary);
+}
+
+.icon-inline {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.15em;
+  color: currentColor;
+  display: inline-block;
+}
+
+/* ========================================================================
+   VIDEO FACADE (YouTube lazy load)
+   ======================================================================== */
+
+.video-facade {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  aspect-ratio: 16 / 9;
+}
+
+.video-facade:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+.video-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-facade__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: var(--transition-base);
+  padding: 0;
+}
+
+.video-facade:hover .video-facade__play {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-facade iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ========================================================================
+   VIDEO GRID
+   ======================================================================== */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.video-grid--preview {
+  margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 1023px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+/* ========================================================================
+   ACCESSIBILITY
+   ======================================================================== */
+
 .skip-to-main {
   position: absolute;
   top: -40px;
