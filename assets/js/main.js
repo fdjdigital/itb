@@ -17,7 +17,7 @@
 // ============================================================================
 
 const CONFIG = {
-  calendlyURL: 'https://calendly.com/institutotarcisiobisinotto-i_x6/visita-ao-instituto-tarcisio-bisinotto',
+  calendlyURL: 'https://calendly.com/institutotarcisiobisinotto/itb',
   animationOffset: 100,
   scrollOffset: 80,
 };
