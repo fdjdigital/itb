@@ -3,6 +3,26 @@ _backups/
 _dev/
 _docs/
 
+# Pastas internas do projeto (nao devem ir para o servidor)
+01 - */
+06 - */
+08 - */
+
+# Arquivos de analise e dados
+*.csv
+*.json
+!package.json
+*.txt
+!robots.txt
+Analise_Competitiva_*.docx
+RELATORIO_*.txt
+RELAT*RIO*.pdf
+Relat*rio*.pdf
+leads.csv
+listagem_alunos_ITB.csv
+ltv_alunos_ITB.csv
+analise_entrada_saida_alunos.csv
+
 # Sistema
 .DS_Store
 Thumbs.db

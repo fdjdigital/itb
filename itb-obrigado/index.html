@@ -26,107 +26,11 @@
 
     <link rel="stylesheet" href="../assets/css/styles.css?v=20260218-1">
 
-    <style>
-        .ty-hero {
-            background: linear-gradient(135deg, #7ed957 0%, #6bc247 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .ty-checkmark {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            animation: scaleIn 0.5s ease-out;
-        }
-        .ty-checkmark svg {
-            width: 60px;
-            height: 60px;
-            stroke: #7ed957;
-            stroke-width: 3;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            fill: none;
-            animation: drawCheck 0.5s ease-out 0.3s forwards;
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
-        }
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-        @keyframes drawCheck {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-        .ty-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .ty-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            margin-bottom: 2rem;
-        }
-        .ty-next-step {
-            background: white;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            text-align: left;
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .ty-next-step__number {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #004aad 0%, #0066cc 100%);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        .ty-next-step__content h3 {
-            color: var(--color-primary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        .ty-next-step__content p {
-            color: var(--color-gray-dark);
-            line-height: 1.6;
-        }
-        @media (max-width: 768px) {
-            .ty-title {
-                font-size: 1.75rem;
-            }
-            .ty-subtitle {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    
 </head>
 <body>
     
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<svg xmlns="http://www.w3.org/2000/svg"  style="display: none">
   <!-- Trophy/Award -->
   <symbol id="icon-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
@@ -484,14 +388,14 @@
 
 <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRW35B7"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0"  style="display:none;visibility:hidden"></iframe></noscript>
 
     <a href="#main-content" class="skip-to-main">Pular para o conteúdo principal</a>
 
     <!-- Simplified Header -->
     <header class="header">
         <div class="container">
-            <div class="header__container" style="justify-content: center;">
+            <div class="header__container"  style="justify-content: center">
                 <a href="../index.html" class="header__logo-link">
                     <img src="../images/logo-instituto-tarcisio-bisinotto.webp"
                          alt="Instituto Tarcísio Bisinotto - Logo" class="header__logo">
@@ -504,7 +408,7 @@
         <!-- HERO -->
         <section class="ty-hero">
             <div class="container">
-                <div style="max-width: 700px; margin: 0 auto;">
+                <div  style="max-width: 700px; margin: 0 auto">
                     <div class="ty-checkmark">
                         <svg viewBox="0 0 52 52">
                             <path d="M14 27l10 10 20-20"/>
@@ -515,8 +419,8 @@
                         Estamos muito felizes em receber você e sua família no ITB.<br>
                         Prepare-se para conhecer um lugar especial!
                     </p>
-                    <div style="display: inline-block; background: rgba(255,255,255,0.2); padding: 0.75rem 1.5rem; border-radius: 0.5rem;">
-                        <p style="margin: 0; font-size: 1.125rem;">
+                    <div  style="display: inline-block; background: rgba(255,255,255,0.2); padding: 0.75rem 1.5rem; border-radius: 0.5rem">
+                        <p  style="margin: 0; font-size: 1.125rem">
                             <svg class="icon-inline" aria-hidden="true"><use href="#icon-email"></use></svg> <strong>Confirmação enviada para seu e-mail</strong>
                         </p>
                     </div>
@@ -527,12 +431,12 @@
         <!-- O QUE ACONTECE AGORA -->
         <section class="section">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 3rem;" data-animate="fade-in-up">
+                <div  class="text-center" style="margin-bottom: 3rem" data-animate="fade-in-up">
                     <h2 class="section__title">O Que Acontece Agora?</h2>
                     <p class="text-lg">Preparamos tudo para que sua visita seja especial</p>
                 </div>
 
-                <div style="max-width: 800px; margin: 0 auto; display: grid; gap: 1.5rem;">
+                <div  style="max-width: 800px; margin: 0 auto; display: grid; gap: 1.5rem">
                     <div class="ty-next-step" data-animate="fade-in-up">
                         <div class="ty-next-step__number">1</div>
                         <div class="ty-next-step__content">
@@ -583,21 +487,21 @@
         <!-- ENQUANTO ISSO -->
         <section class="section section--secondary">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 3rem;" data-animate="fade-in-up">
+                <div  class="text-center" style="margin-bottom: 3rem" data-animate="fade-in-up">
                     <h2 class="section__title">Enquanto Aguarda a Visita</h2>
                     <p class="text-lg">Conheça mais sobre o ITB e nossa proposta pedagógica</p>
                 </div>
 
                 <div class="row row--3cols">
                     <div class="col" data-animate="fade-in-up">
-                        <div class="card" style="height: 100%; text-align: center;">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;"><svg aria-hidden="true"><use href="#icon-device"></use></svg></div>
+                        <div class="card text-center"  style="height: 100%">
+                            <div  class="mb-2" style="font-size: 3rem"><svg aria-hidden="true"><use href="#icon-device"></use></svg></div>
                             <h3 class="card__title">Siga-nos nas Redes</h3>
                             <p class="card__text">
                                 Acompanhe nosso dia a dia, eventos e atividades no Instagram e Facebook.
                                 Veja como é a rotina das crianças no ITB!
                             </p>
-                            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center;">
+                            <div  class="mt-3 gap-lg" style="display: flex; justify-content: center">
                                 <a href="https://www.instagram.com/institutotarcisiobisinotto/" target="_blank" class="btn btn--outline" data-gtm-event="social_click" data-gtm-label="Instagram - TY Page">
                                     Instagram
                                 </a>
@@ -609,28 +513,28 @@
                     </div>
 
                     <div class="col" data-animate="fade-in-up">
-                        <div class="card" style="height: 100%; text-align: center;">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;"><svg aria-hidden="true"><use href="#icon-book"></use></svg></div>
+                        <div class="card text-center"  style="height: 100%">
+                            <div  class="mb-2" style="font-size: 3rem"><svg aria-hidden="true"><use href="#icon-book"></use></svg></div>
                             <h3 class="card__title">Leia Nosso Blog</h3>
                             <p class="card__text">
                                 Artigos sobre desenvolvimento infantil, educação bilíngue, dicas para pais
                                 e muito mais conteúdo relevante.
                             </p>
-                            <a href="../blog/index.html" class="btn btn--outline" style="margin-top: 1.5rem;" data-gtm-event="navigation" data-gtm-label="Blog - TY Page">
+                            <a href="../blog/index.html" class="btn btn--outline mt-3"  data-gtm-event="navigation" data-gtm-label="Blog - TY Page">
                                 Acessar Blog
                             </a>
                         </div>
                     </div>
 
                     <div class="col" data-animate="fade-in-up">
-                        <div class="card" style="height: 100%; text-align: center;">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;"><svg aria-hidden="true"><use href="#icon-graduation"></use></svg></div>
+                        <div class="card text-center"  style="height: 100%">
+                            <div  class="mb-2" style="font-size: 3rem"><svg aria-hidden="true"><use href="#icon-graduation"></use></svg></div>
                             <h3 class="card__title">Conheça Nossa Proposta</h3>
                             <p class="card__text">
                                 Descubra nossa metodologia pedagógica, educação bilíngue, atividades
                                 extracurriculares e muito mais.
                             </p>
-                            <a href="../projeto-pedagogico/index.html" class="btn btn--outline" style="margin-top: 1.5rem;" data-gtm-event="navigation" data-gtm-label="Projeto - TY Page">
+                            <a href="../projeto-pedagogico/index.html" class="btn btn--outline mt-3"  data-gtm-event="navigation" data-gtm-label="Projeto - TY Page">
                                 Ver Projeto Pedagógico
                             </a>
                         </div>
@@ -642,7 +546,7 @@
         <!-- DEPOIMENTOS -->
         <section class="section">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 2rem;" data-animate="fade-in-up">
+                <div  class="text-center mb-4" data-animate="fade-in-up">
                     <h2 class="section__title">O Que Dizem Quem Já Visitou</h2>
                     <p class="text-lg">Depoimentos de famílias que conheceram o ITB</p>
                 </div>
@@ -650,36 +554,36 @@
                 <div class="row row--2cols">
                     <div class="col" data-animate="fade-in-up">
                         <div class="card">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;"><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg></div>
-                            <p class="text-lg" style="font-style: italic; margin-bottom: 1rem;">
+                            <div  class="mb-2" style="font-size: 2rem"><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg></div>
+                            <p class="text-lg mb-2"  style="font-style: italic">
                                 "Fizemos a visita sem muita expectativa, mas saímos apaixonados! A estrutura
                                 é impecável, a equipe super acolhedora e ficou claro o carinho que têm pelas crianças.
                                 Matriculamos no mesmo dia!"
                             </p>
-                            <p style="font-weight: 600; color: var(--color-primary);">
+                            <p  style="font-weight: 600; color: var(--color-primary)">
                                 — Camila e André, pais da Laura
                             </p>
                         </div>
                     </div>
                     <div class="col" data-animate="fade-in-up">
                         <div class="card">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;"><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg></div>
-                            <p class="text-lg" style="font-style: italic; margin-bottom: 1rem;">
+                            <div  class="mb-2" style="font-size: 2rem"><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg><svg class="icon-inline" aria-hidden="true"><use href="#icon-star"></use></svg></div>
+                            <p class="text-lg mb-2"  style="font-style: italic">
                                 "Visitamos várias escolas no Belvedere, mas nenhuma se compara ao ITB. A atenção
                                 individualizada, as turmas pequenas e a metodologia bilíngue nos conquistaram
                                 completamente. Melhor escolha que fizemos!"
                             </p>
-                            <p style="font-weight: 600; color: var(--color-primary);">
+                            <p  style="font-weight: 600; color: var(--color-primary)">
                                 — Patrícia, mãe do Bernardo
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 2rem;" data-animate="fade-in-up">
+                <div  class="text-center mt-4" data-animate="fade-in-up">
                     <img src="../images/selo-28-anos-belvedere-itb.webp"
-                         alt="28 Anos no Belvedere" style="max-width: 200px;">
-                    <p style="margin-top: 1rem; color: var(--color-gray-medium);">
+                         alt="28 Anos no Belvedere"  style="max-width: 200px">
+                    <p  class="mt-2" style="color: var(--color-gray-medium)">
                         28 anos de tradição em educação infantil no coração do Belvedere
                     </p>
                 </div>
@@ -689,13 +593,13 @@
         <!-- PRECISA REAGENDAR -->
         <section class="section section--secondary">
             <div class="container">
-                <div class="card" style="max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); text-align: center;" data-animate="fade-in-up">
+                <div class="card text-center"  style="max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)" data-animate="fade-in-up">
                     <h2 class="text-primary">Precisa Reagendar?</h2>
                     <p class="text-lg">
                         Sem problemas! Entre em contato conosco por WhatsApp ou telefone e ajustaremos
                         um novo horário que funcione melhor para você.
                     </p>
-                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <div  class="mt-3 gap-lg" style="display: flex; justify-content: center; flex-wrap: wrap">
                         <a href="https://wa.me/5531993300032?text=Olá! Preciso reagendar minha visita ao ITB." target="_blank" class="btn btn--primary" data-gtm-event="contact_click" data-gtm-label="WhatsApp Reagendar">
                             <svg class="icon-inline" aria-hidden="true"><use href="#icon-chat"></use></svg> WhatsApp
                         </a>
@@ -710,24 +614,24 @@
         <!-- INFORMAÇÕES ÚTEIS -->
         <section class="section">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 2rem;" data-animate="fade-in-up">
+                <div  class="text-center mb-4" data-animate="fade-in-up">
                     <h2 class="section__title">Informações Úteis para sua Visita</h2>
                 </div>
 
-                <div class="row row--2cols" style="max-width: 700px; margin: 0 auto;">
+                <div class="row row--2cols"  style="max-width: 700px; margin: 0 auto">
                     <div class="col" data-animate="fade-in-up">
                         <div class="card">
                             <h3 class="text-primary"><svg class="icon-inline" aria-hidden="true"><use href="#icon-location"></use></svg> Como Chegar</h3>
-                            <p style="margin-top: 0.5rem;">
+                            <p  style="margin-top: 0.5rem">
                                 <strong>Av. Professor Cristóvam dos Santos, 595</strong><br>
                                 Belvedere, Belo Horizonte - MG<br>
                                 CEP: 30320-510
                             </p>
-                            <p style="margin-top: 1rem;">
+                            <p  class="mt-2">
                                 <strong>Estacionamento:</strong> Disponível na rua<br>
                                 <strong>Ponto de referência:</strong> Entre a Praça Ari Barroso e o Colégio Santo Agostinho
                             </p>
-                            <a href="https://maps.google.com/?q=Av.+Professor+Cristóvam+dos+Santos,+595+-+Belvedere,+BH" target="_blank" class="btn btn--outline" style="margin-top: 1rem;" data-gtm-event="map_click" data-gtm-label="Google Maps - TY Page">
+                            <a href="https://maps.google.com/?q=Av.+Professor+Cristóvam+dos+Santos,+595+-+Belvedere,+BH" target="_blank" class="btn btn--outline mt-2"  data-gtm-event="map_click" data-gtm-label="Google Maps - TY Page">
                                 Abrir no Google Maps
                             </a>
                         </div>
@@ -736,7 +640,7 @@
                     <div class="col" data-animate="fade-in-up">
                         <div class="card">
                             <h3 class="text-primary"><svg class="icon-inline" aria-hidden="true"><use href="#icon-lightbulb"></use></svg> Dicas para a Visita</h3>
-                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8;">
+                            <ul  style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8">
                                 <li>Traga as crianças! Elas vão adorar conhecer os espaços</li>
                                 <li>Reserve cerca de 1 hora para a visita completa</li>
                                 <li>Prepare suas perguntas com antecedência</li>
@@ -758,7 +662,7 @@
                         Estamos ansiosos para mostrar pessoalmente por que<br>
                         o ITB é a escolha de centenas de famílias do Belvedere.
                     </p>
-                    <p style="margin-top: 2rem; font-size: 1.125rem;">
+                    <p  class="mt-4" style="font-size: 1.125rem">
                         <svg class="icon-inline" aria-hidden="true"><use href="#icon-phone"></use></svg> Dúvidas? Entre em contato:<br>
                         <strong>(31) 3286-1564 | (31) 99330-0032</strong>
                     </p>
@@ -772,9 +676,9 @@
             <div class="footer__container">
                 <div class="footer__column">
                     <img src="../images/logo-instituto-tarcisio-bisinotto.webp"
-                         alt="Instituto Tarcísio Bisinotto" style="height: 60px; margin-bottom: 1rem;">
+                         alt="Instituto Tarcísio Bisinotto" class="footer__logo">
                     <p>28 anos de tradição e excelência em educação infantil bilíngue no Belvedere.</p>
-                    <div style="margin-top: 1rem;">
+                    <div  class="mt-2">
                         <img src="../images/selo-instituicao-reconhecida-itb.webp"
                              alt="Instituição Reconhecida" class="seal">
                     </div>
@@ -798,7 +702,7 @@
                 <div class="footer__column">
                     <h4 class="footer__title">Horário</h4>
                     <p><strong>Segunda a Sexta:</strong><br>7h às 19h</p>
-                    <p style="margin-top: 1rem;">
+                    <p  class="mt-2">
                         <a href="https://www.instagram.com/institutotarcisiobisinotto/" target="_blank" class="btn btn--secondary" data-gtm-event="social_click" data-gtm-label="Instagram - Footer TY">
                             Siga no Instagram
                         </a>

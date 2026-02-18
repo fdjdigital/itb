@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /itb-obrigado/
+Disallow: /comparativo/
 
 Sitemap: https://www.bisinotto.com.br/sitemap.xml
