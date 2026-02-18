@@ -542,10 +542,18 @@ strong, b {
   opacity: 0.8;
 }
 
-/* Ajuste de cor para telefones no rodapé */
+/* Ajuste de cor para textos e links em seções escuras */
 .footer__column p,
 .footer__column p strong {
   color: var(--color-white);
+}
+
+.footer a[href^="tel"],
+.footer__column a,
+.section--primary a:not(.btn),
+.hero a:not(.btn) {
+  color: var(--color-white);
+  text-decoration: underline;
 }
 
 /* ========================================================================
