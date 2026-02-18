@@ -7,7 +7,10 @@
     <title>Comparativo de Performance | ITB - Instituto Tarcisio Bisinotto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"></noscript>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -297,7 +300,7 @@
         <div class="container">
             <img src="../images/logo-instituto-tarcisio-bisinotto.webp"
                  alt="Instituto Tarcisio Bisinotto"
-                 loading="eager">
+                 loading="eager" width="532" height="416" decoding="async">
             <h1>Comparativo de Performance do Site</h1>
             <p>WordPress (antigo) vs HTML Customizado (novo)</p>
             <div class="report-badge">Google Lighthouse | 18 de Fevereiro de 2026</div>

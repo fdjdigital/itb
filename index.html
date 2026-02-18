@@ -42,9 +42,16 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css?v=20260218-1">
 
+    <!-- Preload hero image for faster LCP -->
+    <link rel="preload" as="image" href="images/vertical/itb-criancas-felizes-correndo-escola-belvedere.webp" type="image/webp">
+
     <!-- Preconnect para otimização -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"></noscript>
 
     <!-- Structured Data JSON-LD -->
     <script type="application/ld+json">
@@ -457,7 +464,7 @@
                 <a href="index.html" class="header__logo-link">
                     <img src="images/logo-instituto-tarcisio-bisinotto.webp"
                          alt="Instituto Tarcísio Bisinotto - Logo"
-                         class="header__logo">
+                         class="header__logo" width="532" height="416" decoding="async">
                 </a>
 
                 <button class="menu-toggle" aria-label="Abrir menu de navegação">
@@ -496,8 +503,8 @@
                             <div class="hero__badge">
                                 <img src="images/selo-30-anos-instituto-tarcisio-bisinotto-belvedere.webp"
                                      alt="30 anos do Instituto Tarcísio Bisinotto no Belvedere"
-                                     class="seal">
-                        <img src="images/selo-instituicao-reconhecida-itb.webp" alt="Selo Instituição Reconhecida ITB" class="seal">
+                                     class="seal" width="300" height="450" decoding="async">
+                        <img src="images/selo-instituicao-reconhecida-itb.webp" alt="Selo Instituição Reconhecida ITB" class="seal" width="200" height="200" decoding="async">
                             </div>
                             <h1 class="hero__title">
                                 O Melhor Começo para a Jornada do seu Filho
@@ -519,7 +526,7 @@
                     <div class="col"  style="flex: 1" data-animate="fade-in-up">
                         <img src="images/vertical/itb-criancas-felizes-correndo-escola-belvedere.webp"
                              alt="Crianças felizes correndo no Instituto Tarcísio Bisinotto"
-                              style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15)">
+                              style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15)" width="800" height="1200" fetchpriority="high" decoding="async">
                     </div>
                 </div>
             </div>
@@ -539,7 +546,7 @@
                 <div  style="max-width: 700px; margin: 2rem auto" data-animate="fade-in-up">
                     <img src="images/vertical/instituto-tarcisio-bisinotto-fachada-escola-belvedere.webp"
                          alt="Fachada do Instituto Tarcísio Bisinotto (ITB) - Primeira escola do Belvedere"
-                          style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1)">
+                          style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1)" width="800" height="1200" loading="lazy" decoding="async">
                 </div>
 
                 <div class="row">
@@ -600,7 +607,7 @@
                     <div class="col" data-animate="fade-in-up">
                         <div class="card">
                             <img class="card__image" src="images/vertical/bisinotto-bebes-brincando-bercario-educacao-infantil.webp"
-                                 alt="Berçário ITB - Bebês brincando">
+                                 alt="Berçário ITB - Bebês brincando" width="800" height="1200" loading="lazy" decoding="async">
                             <h3 class="card__title">Berçário</h3>
                             <p class="card__text">
                                 A partir de 4 meses. Ambiente acolhedor e seguro para os primeiros passos do seu bebê.
@@ -612,7 +619,7 @@
                     <div class="col" data-animate="fade-in-up">
                         <div class="card">
                             <img class="card__image" src="images/vertical/instituto-tarcisio-bisinotto-criancas-blocos-infantil.webp"
-                                 alt="Crianças do Infantil brincando com blocos">
+                                 alt="Crianças do Infantil brincando com blocos" width="800" height="1200" loading="lazy" decoding="async">
                             <h3 class="card__title">Infantil</h3>
                             <p class="card__text">
                                 De 1 a 3 anos (Infantil 1, 2 e 3). Desenvolvimento das primeiras habilidades com muito cuidado e carinho.
@@ -624,7 +631,7 @@
                     <div class="col" data-animate="fade-in-up">
                         <div class="card">
                             <img class="card__image" src="images/vertical/itb-menina-pintura-atividade-pre-escola.webp"
-                                 alt="Crianças da Pré-escola em atividades educativas">
+                                 alt="Crianças da Pré-escola em atividades educativas" width="800" height="1200" loading="lazy" decoding="async">
                             <h3 class="card__title">Pré-escola</h3>
                             <p class="card__text">
                                 De 4 a 5 anos (Infantil 4 e 5). Preparação para o fundamental com educação bilíngue e atividades especializadas.
@@ -636,7 +643,7 @@
                     <div class="col" data-animate="fade-in-up">
                         <div class="card">
                             <img class="card__image" src="images/vertical/bisinotto-meninas-tatame-ensino-fundamental.webp"
-                                 alt="Professor com alunos do Ensino Fundamental">
+                                 alt="Professor com alunos do Ensino Fundamental" width="800" height="1200" loading="lazy" decoding="async">
                             <h3 class="card__title">Fundamental</h3>
                             <p class="card__text">
                                 1º e 2º Ano do Ensino Fundamental. Transição suave com metodologia que respeita o ritmo da criança.
@@ -696,7 +703,7 @@
                 <div class="footer__column">
                     <img src="images/logo-instituto-tarcisio-bisinotto.webp"
                          alt="Instituto Tarcísio Bisinotto"
-                         class="footer__logo mb-2">
+                         class="footer__logo mb-2" width="532" height="416" loading="lazy" decoding="async">
                     <p>
                         28 anos de tradição e excelência em educação infantil bilíngue no Belvedere.
                     </p>
