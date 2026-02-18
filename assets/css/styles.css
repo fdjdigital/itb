@@ -413,7 +413,6 @@ strong, b {
 
 .card__image {
   width: 100%;
-  aspect-ratio: 1 / 1;
   border-radius: var(--border-radius-lg);
   margin-bottom: var(--spacing-lg);
   object-fit: cover;
