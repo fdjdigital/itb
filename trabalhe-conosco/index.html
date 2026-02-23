@@ -448,7 +448,7 @@
                     <div class="card">
                         <h2 class="text-primary mb-2" >Por que trabalhar no ITB?</h2>
                         <p class="text-lg">
-                            Há mais de 28 anos, o Instituto Tarcísio Bisinotto forma cidadãos com excelência
+                            Há mais de 30 anos, o Instituto Tarcísio Bisinotto forma cidadãos com excelência
                             em educação infantil bilíngue. Buscamos profissionais apaixonados por educação,
                             comprometidos com o desenvolvimento integral das crianças e alinhados aos nossos valores.
                         </p>
@@ -505,6 +505,25 @@
                                     <option value="Semi-presencial">Semi-presencial</option>
                                     <option value="EAD">EAD</option>
                                 </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="faculdade">
+                                    Nome da faculdade <span class="required">*</span>
+                                </label>
+                                <input type="text" id="faculdade" name="faculdade" class="form-input" required
+                                       placeholder="Informe o nome da sua faculdade">
+                            </div>
+
+                            <div class="form-group" id="periodoCursoGroup" style="display: none;">
+                                <label class="form-label" for="periodo_curso">
+                                    Período em curso <span class="required">*</span>
+                                    <span class="form-label-description">
+                                        Informe em qual período você está atualmente.
+                                    </span>
+                                </label>
+                                <input type="text" id="periodo_curso" name="periodo_curso" class="form-input"
+                                       placeholder="Ex: 3º período">
                             </div>
                         </div>
 
@@ -617,6 +636,64 @@
                             </div>
                         </div>
 
+                        <!-- VALE TRANSPORTE -->
+                        <div class="card mb-4">
+                            <h3 class="form-section-title">Vale Transporte</h3>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Caso seja selecionada, irá fazer uso de vale transporte? <span class="required">*</span>
+                                </label>
+                                <div class="radio-group" style="flex-direction: column;">
+                                    <label class="radio-option">
+                                        <input type="radio" name="vale_transporte" value="2 vales Transfacil" required>
+                                        <span>Total de 2 vales de R$ 6,25 cada (Transfácil)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="vale_transporte" value="3 vales Transfacil">
+                                        <span>Total de 3 vales de R$ 6,25 cada (Transfácil)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="vale_transporte" value="4 vales Transfacil">
+                                        <span>Total de 4 vales de R$ 6,25 cada (Transfácil)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="vale_transporte" value="Outros vales Otimo">
+                                        <span>Outros vales da concessionária Ótimo</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="vale_transporte" value="Nao farei uso">
+                                        <span>Não farei uso de vale transporte</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DISPONIBILIDADE DE TURNO -->
+                        <div class="card mb-4">
+                            <h3 class="form-section-title">Disponibilidade de Turno</h3>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Qual sua disponibilidade de turno? <span class="required">*</span>
+                                </label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="turno" value="Manha" required>
+                                        <span>Manhã</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="turno" value="Tarde">
+                                        <span>Tarde</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="turno" value="Integral">
+                                        <span>Integral</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- ANEXOS -->
                         <div class="card mb-4" >
                             <h3 class="form-section-title">Documentos</h3>
@@ -712,8 +789,13 @@
                          alt="Instituto Tarcísio Bisinotto"
                          class="footer__logo mb-2" width="200" height="156" loading="lazy" decoding="async">
                     <p>
-                        28 anos de tradição e excelência em educação infantil bilíngue no Belvedere.
+                        30 anos de tradição e excelência em educação infantil bilíngue no Belvedere.
                     </p>
+                    <div class="mt-2">
+                        <img src="../images/selo-instituicao-reconhecida-itb.webp"
+                             alt="Instituição Reconhecida"
+                             class="seal" loading="lazy" decoding="async">
+                    </div>
                 </div>
 
                 <div class="footer__column">
@@ -775,8 +857,24 @@
     (function() {
         // Configuração - E-mail destino (facilmente alterável)
         const EMAIL_DESTINO = 'direcao@bisinotto.com.br';
+        // Google Sheets via Apps Script
+        const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbz_Yn4K1aZFPmOFZ1_NtpcSfEzB1GmSJb2YQAegjF2HMVwlhbgbbZb0SMoq75xccqDFaw/exec';
         // Configuração futura WhatsApp
         // const WHATSAPP_NUMERO = '5531993300032';
+
+        // Mostrar/ocultar campo "Período em curso" baseado na seleção de formação
+        document.getElementById('formacao').addEventListener('change', function(e) {
+            var periodoCursoGroup = document.getElementById('periodoCursoGroup');
+            var periodoCursoInput = document.getElementById('periodo_curso');
+            if (e.target.value === 'Pedagogia em curso') {
+                periodoCursoGroup.style.display = 'block';
+                periodoCursoInput.required = true;
+            } else {
+                periodoCursoGroup.style.display = 'none';
+                periodoCursoInput.required = false;
+                periodoCursoInput.value = '';
+            }
+        });
 
         // Mostrar nome do arquivo selecionado
         document.getElementById('curriculo').addEventListener('change', function(e) {
@@ -797,21 +895,32 @@
             const nome = document.getElementById('nome').value;
             const formacao = document.getElementById('formacao').value;
             const modalidade = document.getElementById('modalidade').value;
+            const faculdade = document.getElementById('faculdade').value;
+            const periodoCurso = document.getElementById('periodo_curso').value;
             const bncc = document.querySelector('input[name="bncc"]:checked')?.value || '';
             const conhecimento_0_3 = document.querySelector('input[name="conhecimento_0_3"]:checked')?.value || '';
             const conhecimento_4_7 = document.querySelector('input[name="conhecimento_4_7"]:checked')?.value || '';
             const justificativa = document.getElementById('justificativa').value;
             const valores = document.getElementById('valores').value;
             const valoresConflito = document.getElementById('valores_conflito').value;
+            const valeTransporte = document.querySelector('input[name="vale_transporte"]:checked')?.value || '';
+            const turno = document.querySelector('input[name="turno"]:checked')?.value || '';
 
             // Validar campos obrigatórios
-            if (!nome || !formacao || !modalidade || !bncc || !conhecimento_0_3 || !conhecimento_4_7 || !justificativa || !valores || !valoresConflito) {
+            if (!nome || !formacao || !modalidade || !faculdade || !bncc || !conhecimento_0_3 || !conhecimento_4_7 || !justificativa || !valores || !valoresConflito || !valeTransporte || !turno) {
                 alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+
+            if (formacao === 'Pedagogia em curso' && !periodoCurso) {
+                alert('Por favor, informe o período em curso.');
                 return;
             }
 
             // Montar corpo do e-mail
             const assunto = encodeURIComponent('Candidatura - Trabalhe Conosco ITB - ' + nome);
+
+            const periodoTexto = periodoCurso ? '\nPeríodo em curso: ' + periodoCurso : '';
 
             const corpo = `CANDIDATURA - TRABALHE CONOSCO
 Instituto Tarcísio Bisinotto (ITB)
@@ -825,6 +934,7 @@ FORMAÇÃO ACADÊMICA
 ------------------
 Formação: ${formacao}
 Modalidade: ${modalidade}
+Faculdade: ${faculdade}${periodoTexto}
 
 NÍVEL DE CONHECIMENTO
 ---------------------
@@ -844,6 +954,14 @@ COMO LIDA QUANDO VALORES SÃO DESRESPEITADOS
 -------------------------------------------
 ${valoresConflito}
 
+VALE TRANSPORTE
+---------------
+${valeTransporte}
+
+DISPONIBILIDADE DE TURNO
+------------------------
+${turno}
+
 ================================
 IMPORTANTE: Por favor, anexe a este e-mail:
 1. Currículo em PDF
@@ -851,6 +969,28 @@ IMPORTANTE: Por favor, anexe a este e-mail:
 ================================`;
 
             const corpoEncoded = encodeURIComponent(corpo);
+
+            // Enviar dados para Google Sheets (em background)
+            fetch(SHEETS_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nome: nome,
+                    formacao: formacao,
+                    modalidade: modalidade,
+                    faculdade: faculdade,
+                    periodo_curso: periodoCurso,
+                    bncc: bncc,
+                    conhecimento_0_3: conhecimento_0_3,
+                    conhecimento_4_7: conhecimento_4_7,
+                    justificativa: justificativa,
+                    valores: valores,
+                    valores_conflito: valoresConflito,
+                    vale_transporte: valeTransporte,
+                    turno: turno
+                })
+            }).catch(function() {});
 
             // Abrir cliente de e-mail
             window.location.href = 'mailto:' + EMAIL_DESTINO + '?subject=' + assunto + '&body=' + corpoEncoded;

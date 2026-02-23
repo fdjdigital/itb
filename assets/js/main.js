@@ -498,7 +498,7 @@ document.addEventListener('click', function(e) {
 console.log(`
 %c 🎓 Instituto Tarcísio Bisinotto %c
 %c Educação Infantil Bilíngue no Belvedere %c
-%c 28 anos de tradição e experiência %c
+%c 30 anos de tradição e experiência %c
 `,
 'background: #004aad; color: white; font-size: 16px; padding: 10px;',
 '',
