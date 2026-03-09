@@ -13,6 +13,13 @@ RewriteCond %{HTTP_HOST} ^bisinotto\.com\.br$ [NC]
 RewriteRule ^(.*)$ https://www.bisinotto.com.br/$1 [L,R=301]
 
 # ===================================================================
+# REDIRECTS 301 - LINKS CURTOS
+# ===================================================================
+
+Redirect 301 /ig https://calendly.com/institutotarcisiobisinotto/instagram
+Redirect 301 /revista https://calendly.com/institutotarcisiobisinotto/belvedere
+
+# ===================================================================
 # REDIRECTS 301 - WORDPRESS
 # ===================================================================
 
