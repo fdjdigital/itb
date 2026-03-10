@@ -1416,8 +1416,35 @@ strong, b {
 }
 .form-note-icon { margin-right: 0.5rem; }
 .required { color: #dc2626; }
+.form-hint { font-size: 0.875rem; color: #64748b; }
+.lgpd-text { font-size: 0.85rem; color: #6b7280; }
+.lgpd-link { color: var(--color-primary); }
+.form-error-msg { display: block; color: #dc2626; font-size: 0.8rem; margin-top: 0.35rem; }
 @media (max-width: 640px) {
   .radio-group { flex-direction: column; gap: 0.75rem; }
+}
+
+/* Tela de confirmação pós-envio */
+.confirmation {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f0fdf4;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.confirmation__icon { margin-bottom: 1.5rem; }
+.confirmation__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+.confirmation__text {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 /* ========================================================================

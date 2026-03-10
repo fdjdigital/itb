@@ -465,7 +465,7 @@
         <section class="section section--secondary">
             <div class="container">
                 <div  style="max-width: 700px; margin: 0 auto">
-                    <form id="trabalheConoscoForm" data-animate="fade-in-up">
+                    <form id="trabalheConoscoForm" data-animate="fade-in-up" novalidate>
 
                         <!-- DADOS PESSOAIS -->
                         <div class="card mb-4" >
@@ -477,6 +477,14 @@
                                 </label>
                                 <input type="text" id="nome" name="nome" class="form-input" required
                                        placeholder="Digite seu nome completo">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="telefone">
+                                    WhatsApp <span class="required">*</span>
+                                </label>
+                                <input type="tel" id="telefone" name="telefone" class="form-input" required
+                                       placeholder="(31) 99999-9999" maxlength="15">
                             </div>
                         </div>
 
@@ -694,70 +702,30 @@
                             </div>
                         </div>
 
-                        <!-- ANEXOS -->
-                        <div class="card mb-4" >
-                            <h3 class="form-section-title">Documentos</h3>
 
-                            <div class="form-note">
-                                <span class="form-note-icon">&#9888;</span>
-                                <strong>Importante:</strong> Ao clicar em "Enviar Candidatura", será aberto seu aplicativo de e-mail
-                                com as informações preenchidas. Você deverá anexar seu currículo (PDF) e vídeo de apresentação
-                                antes de enviar o e-mail.
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">
-                                    Currículo em PDF <span class="required">*</span>
-                                    <span class="form-label-description">
-                                        Tenha seu currículo em PDF pronto para anexar ao e-mail.
-                                    </span>
-                                </label>
-                                <label class="file-upload" id="curriculoUpload">
-                                    <input type="file" id="curriculo" name="curriculo" accept=".pdf">
-                                    <div class="file-upload-icon">&#128196;</div>
-                                    <div class="file-upload-text">
-                                        <strong>Selecione o currículo</strong> para verificar (opcional)
-                                    </div>
-                                    <div class="file-name" id="curriculoFileName"></div>
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">
-                                    Vídeo de apresentação (50 a 60 segundos) <span class="required">*</span>
-                                    <span class="form-label-description">
-                                        Grave um vídeo de 50 a 60 segundos se apresentando. Tenha o arquivo pronto para anexar ao e-mail.
-                                    </span>
-                                </label>
-                                <label class="file-upload" id="videoUpload">
-                                    <input type="file" id="video" name="video" accept="video/*">
-                                    <div class="file-upload-icon">&#127909;</div>
-                                    <div class="file-upload-text">
-                                        <strong>Selecione o vídeo</strong> para verificar (opcional)
-                                    </div>
-                                    <div class="file-name" id="videoFileName"></div>
-                                </label>
-                            </div>
+                        <!-- LGPD -->
+                        <div class="form-group">
+                            <label class="radio-option">
+                                <input type="checkbox" id="lgpd" required>
+                                <span class="lgpd-text">
+                                    Concordo com o tratamento dos meus dados pessoais para fins de
+                                    processo seletivo, conforme a
+                                    <a href="../politica-de-privacidade/index.html" target="_blank" class="lgpd-link">
+                                        Política de Privacidade
+                                    </a> do ITB.
+                                </span>
+                            </label>
                         </div>
 
                         <!-- ENVIAR -->
-                        <button type="submit" class="btn btn--primary btn-submit">
+                        <button type="submit" id="btnSubmit" class="btn btn--primary btn-submit">
                             Enviar Candidatura
                         </button>
 
-                        <p  class="text-center mt-2" style="font-size: 0.875rem; color: #64748b">
-                            Ao enviar, será aberto seu aplicativo de e-mail para completar o envio.
+                        <p class="text-center mt-2 form-hint">
+                            Após o envio, você receberá uma mensagem no seu WhatsApp com instruções
+                            para enviar seu currículo e vídeo de apresentação.
                         </p>
-
-                        <!-- Opção futura WhatsApp (comentado para uso futuro) -->
-                        <!--
-                        <div  class="mt-2 text-center">
-                            <span  style="color: #64748b; font-size: 0.875rem">ou</span>
-                        </div>
-                        <button type="button" id="enviarWhatsApp" class="btn btn--secondary btn-submit mt-2"  style="background-color: #25D366">
-                            Enviar via WhatsApp
-                        </button>
-                        -->
                     </form>
                 </div>
             </div>
@@ -852,167 +820,6 @@
 
     <!-- JavaScript -->
     <script defer src="../assets/js/main.js?v=20260218-2"></script>
-
-    <script>
-    (function() {
-        // Configuração - E-mail destino (facilmente alterável)
-        const EMAIL_DESTINO = 'pessoas@bisinotto.com.br';
-        // Google Sheets via Apps Script
-        const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbz_Yn4K1aZFPmOFZ1_NtpcSfEzB1GmSJb2YQAegjF2HMVwlhbgbbZb0SMoq75xccqDFaw/exec';
-        // Configuração futura WhatsApp
-        // const WHATSAPP_NUMERO = '5531993300032';
-
-        // Mostrar/ocultar campo "Período em curso" baseado na seleção de formação
-        document.getElementById('formacao').addEventListener('change', function(e) {
-            var periodoCursoGroup = document.getElementById('periodoCursoGroup');
-            var periodoCursoInput = document.getElementById('periodo_curso');
-            if (e.target.value === 'Pedagogia em curso') {
-                periodoCursoGroup.style.display = 'block';
-                periodoCursoInput.required = true;
-            } else {
-                periodoCursoGroup.style.display = 'none';
-                periodoCursoInput.required = false;
-                periodoCursoInput.value = '';
-            }
-        });
-
-        // Mostrar nome do arquivo selecionado
-        document.getElementById('curriculo').addEventListener('change', function(e) {
-            const fileName = e.target.files[0] ? e.target.files[0].name : '';
-            document.getElementById('curriculoFileName').textContent = fileName;
-        });
-
-        document.getElementById('video').addEventListener('change', function(e) {
-            const fileName = e.target.files[0] ? e.target.files[0].name : '';
-            document.getElementById('videoFileName').textContent = fileName;
-        });
-
-        // Envio do formulário
-        document.getElementById('trabalheConoscoForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Coletar dados do formulário
-            const nome = document.getElementById('nome').value;
-            const formacao = document.getElementById('formacao').value;
-            const modalidade = document.getElementById('modalidade').value;
-            const faculdade = document.getElementById('faculdade').value;
-            const periodoCurso = document.getElementById('periodo_curso').value;
-            const bncc = document.querySelector('input[name="bncc"]:checked')?.value || '';
-            const conhecimento_0_3 = document.querySelector('input[name="conhecimento_0_3"]:checked')?.value || '';
-            const conhecimento_4_7 = document.querySelector('input[name="conhecimento_4_7"]:checked')?.value || '';
-            const justificativa = document.getElementById('justificativa').value;
-            const valores = document.getElementById('valores').value;
-            const valoresConflito = document.getElementById('valores_conflito').value;
-            const valeTransporte = document.querySelector('input[name="vale_transporte"]:checked')?.value || '';
-            const turno = document.querySelector('input[name="turno"]:checked')?.value || '';
-
-            // Validar campos obrigatórios
-            if (!nome || !formacao || !modalidade || !faculdade || !bncc || !conhecimento_0_3 || !conhecimento_4_7 || !justificativa || !valores || !valoresConflito || !valeTransporte || !turno) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
-            }
-
-            if (formacao === 'Pedagogia em curso' && !periodoCurso) {
-                alert('Por favor, informe o período em curso.');
-                return;
-            }
-
-            // Montar corpo do e-mail
-            const assunto = encodeURIComponent('Candidatura - Trabalhe Conosco ITB - ' + nome);
-
-            const periodoTexto = periodoCurso ? '\nPeríodo em curso: ' + periodoCurso : '';
-
-            const corpo = `CANDIDATURA - TRABALHE CONOSCO
-Instituto Tarcísio Bisinotto (ITB)
-================================
-
-DADOS DO(A) CANDIDATO(A)
-------------------------
-Nome: ${nome}
-
-FORMAÇÃO ACADÊMICA
-------------------
-Formação: ${formacao}
-Modalidade: ${modalidade}
-Faculdade: ${faculdade}${periodoTexto}
-
-NÍVEL DE CONHECIMENTO
----------------------
-BNCC - Educação Infantil: ${bncc}
-Crianças de 4 meses a 3 anos: ${conhecimento_0_3}
-Crianças de 4 a 7 anos: ${conhecimento_4_7}
-
-JUSTIFICATIVA DAS RESPOSTAS
----------------------------
-${justificativa}
-
-VALORES INEGOCIÁVEIS
---------------------
-${valores}
-
-COMO LIDA QUANDO VALORES SÃO DESRESPEITADOS
--------------------------------------------
-${valoresConflito}
-
-VALE TRANSPORTE
----------------
-${valeTransporte}
-
-DISPONIBILIDADE DE TURNO
-------------------------
-${turno}
-
-================================
-IMPORTANTE: Por favor, anexe a este e-mail:
-1. Currículo em PDF
-2. Vídeo de apresentação (50 a 60 segundos)
-================================`;
-
-            const corpoEncoded = encodeURIComponent(corpo);
-
-            // Enviar dados para Google Sheets (em background)
-            fetch(SHEETS_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    nome: nome,
-                    formacao: formacao,
-                    modalidade: modalidade,
-                    faculdade: faculdade,
-                    periodo_curso: periodoCurso,
-                    bncc: bncc,
-                    conhecimento_0_3: conhecimento_0_3,
-                    conhecimento_4_7: conhecimento_4_7,
-                    justificativa: justificativa,
-                    valores: valores,
-                    valores_conflito: valoresConflito,
-                    vale_transporte: valeTransporte,
-                    turno: turno
-                })
-            }).catch(function() {});
-
-            // Abrir cliente de e-mail
-            window.location.href = 'mailto:' + EMAIL_DESTINO + '?subject=' + assunto + '&body=' + corpoEncoded;
-
-            // Mostrar mensagem de confirmação
-            setTimeout(function() {
-                alert('Seu aplicativo de e-mail foi aberto. Por favor:\n\n1. Anexe seu currículo em PDF\n2. Anexe seu vídeo de apresentação (50-60 segundos)\n3. Envie o e-mail\n\nObrigado por seu interesse em fazer parte da equipe ITB!');
-            }, 500);
-        });
-
-        // Função futura para WhatsApp (comentada)
-        /*
-        document.getElementById('enviarWhatsApp').addEventListener('click', function() {
-            // Coletar dados e montar mensagem para WhatsApp
-            const nome = document.getElementById('nome').value;
-            // ... coletar outros campos
-
-            const mensagem = encodeURIComponent('Olá! Gostaria de enviar minha candidatura para Trabalhe Conosco.\n\nNome: ' + nome + '\n...');
-            window.open('https://wa.me/' + WHATSAPP_NUMERO + '?text=' + mensagem, '_blank');
-        });
-        */
-    })();
-    </script>
+    <script defer src="../assets/js/trabalhe-conosco.js?v=20260309"></script>
 </body>
 </html>
